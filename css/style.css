@@ -1,0 +1,175 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Modern Cyber-themed Design --- */
+
+/* Keyframes for animations */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  /* Animated Gradient Background */
+  background: linear-gradient(-45deg, #0b0f19, #12223c, #0b0f19, #2a4365);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  color: #e0e0e0; /* Light text for dark background */
+  padding-bottom: 80px; /* Add padding to avoid footer overlap */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0;
+  border-bottom: 1px solid #00aaff55;
+}
+
+.logo-box {
+  width: 200px;
+  height: 200px;
+  overflow: hidden; /* crop happens here */
+}
+
+.header-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* use contain if you don't want cropping */
+  display: block;
+}
+
+.header-text {
+  text-align: left;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff;
+  /* Animated Title */
+  animation: fadeInUp 1s ease-out;
+}
+
+header nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #00aaff;
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(10, 25, 47, 0.85); /* Translucent dark blue */
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #00aaff33;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #a0a0a0;
+  background: #0b0f19;
+  border-top: 1px solid #00aaff55;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* --- Contact Form Styles --- */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #a0a0a0;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #2a4365;
+  background-color: #0b0f19;
+  color: #e0e0e0;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00aaff;
+  box-shadow: 0 0 8px #00aaff80;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #00aaff;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0088cc;
+}
+
+/* --- Form Validation Styles --- */
+.error-message {
+  color: #ff4d4d; /* A bright red for errors */
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  display: block; /* Ensures it takes up its own line */
+}

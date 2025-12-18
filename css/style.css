@@ -101,6 +101,52 @@ main {
   backdrop-filter: blur(5px); /* Frosted glass effect */
 }
 
+/* --- Contact Page Layout (FULL WIDTH) --- */
+.contact-layout {
+  display: flex;
+  align-items: stretch;     /* images fill same height as main */
+  width: 100%;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+/* --- Side Image Panels (LEFT & RIGHT) --- */
+.contact-image {
+  flex: 1;                 /* fill all free space */
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 🔥 fills margin space perfectly */
+  display: block;
+}
+
+/* --- Center Main Column --- */
+.contact-layout main {
+  flex: 0 0 800px;         /* fixed width center */
+  margin: 2rem auto;
+}
+
+/* --- Mobile Fix --- */
+@media (max-width: 900px) {
+  .contact-layout {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    height: 220px;         /* visible image blocks on mobile */
+    width: 100%;
+  }
+
+  .contact-layout main {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
 section {
   margin-bottom: 2rem;
 }
